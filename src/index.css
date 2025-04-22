@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply h-full bg-[#14052e] overflow-x-hidden;
+  }
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .custom-dashed-border {
+    @apply relative border-0 p-[1px];
+    background-image: 
+      repeating-linear-gradient(to right, #6B7280 0, #6B7280 6px, transparent 6px, transparent 14px), 
+      repeating-linear-gradient(to bottom, #6B7280 0, #6B7280 6px, transparent 6px, transparent 14px), 
+      repeating-linear-gradient(to left, #6B7280 0, #6B7280 6px, transparent 6px, transparent 14px), 
+      repeating-linear-gradient(to top, #6B7280 0, #6B7280 6px, transparent 6px, transparent 14px);
+    background-position: top, right, bottom, left;
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+    background-repeat: no-repeat;
+  }
+}

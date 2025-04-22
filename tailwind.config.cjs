@@ -29,7 +29,10 @@ module.exports = {
         extrabold: 800
       },
       fontSize: {
-        label: '20px'
+        sm: '10px',
+        md: '17px',
+        md2: '16px'
+
       },
       screens: {
         mobile: '375px',

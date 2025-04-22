@@ -1,14 +1,15 @@
 import "./App.css";
 import Title from "./components/Title";
+import Form from "./components/Form";
+import BackgroundWrapper from "./components/BackgroundWrapper";
 function App() {
   return (
-    <>
-      <div className='min-h-screen w-full bg-[url("./assets/background-desktop.png")] bg-cover bg-center bg-no-repeat'>
-        <div className='min-h-screen w-full bg-[url("./assets/pattern-lines.svg")] bg-cover bg-center bg-no-repeat'>
-          <Title />
-        </div>
+    <BackgroundWrapper>
+      <div className="max-w-4xl mx-auto pt-12 px-4 flex flex-col items-center justify-center relative z-20">
+        <Title />
+        <Form />
       </div>
-    </>
+    </BackgroundWrapper>
   );
 }
 
