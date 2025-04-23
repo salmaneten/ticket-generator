@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import patternSquigglyLineTop from "../assets/pattern-squiggly-line-top.svg";
 import patternSquigglyLineBottomDesktop from "../assets/pattern-squiggly-line-bottom-desktop.svg";
 import patternSquigglyLineBottomMobile from "../assets/pattern-squiggly-line-bottom-mobile-tablet.svg";
