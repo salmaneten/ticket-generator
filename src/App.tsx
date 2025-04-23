@@ -5,7 +5,7 @@ import BackgroundWrapper from "./components/BackgroundWrapper";
 function App() {
   return (
     <BackgroundWrapper>
-      <div className="max-w-4xl mx-auto pt-12 px-4 flex flex-col items-center justify-center relative z-20">
+      <div className="max-w-4xl mx-auto pt-12 px-4 flex flex-col items-center justify-center">
         <Title />
         <Form />
       </div>

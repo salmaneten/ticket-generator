@@ -30,7 +30,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-3 w-full items-center justify-center max-w-xl mx-auto pt-10 relative z-50"
+      className="flex flex-col gap-3 w-full items-center justify-center max-w-xl mx-auto pt-10 pb-10 relative z-50 min-h-[650px]"
     >
       <DragAndDrop
         label="Upload avatar"
@@ -73,7 +73,7 @@ const Form = () => {
       />
       <button
         type="submit"
-        className="w-full max-w-md p-3 mt-3 rounded-xl bg-orange-500 font-inconsolata text-neutral-900 font-bold hover:bg-orange-700"
+        className="w-full max-w-md p-3 mt-6 rounded-xl bg-orange-500 font-inconsolata text-neutral-900 font-bold hover:bg-orange-700"
       >
         Generate My Ticket
       </button>
