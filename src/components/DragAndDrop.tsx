@@ -10,11 +10,12 @@ interface DragAndDropProps {
   infoText: string;
   maxSize: number;
   onRemoveFile?: () => void; // Add this prop
+  isSizeFileExceeded: boolean;
 }
 
 const DragAndDrop: React.FC<DragAndDropProps> = (props) => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-
+ const ERROR_MESSAGE = `File too large. Please upload a photo under ${props.maxSize}KB.`;
   useEffect(() => {
     if (props.file) {
       const objectUrl = URL.createObjectURL(props.file);
@@ -95,10 +96,14 @@ const DragAndDrop: React.FC<DragAndDropProps> = (props) => {
         )}
       </label>
 
-      <div className="text-neutral-300 max-w-md text-left w-full flex gap-2">
-        <img src={props.infoIcon} alt="info" />
+      <div className={`text-neutral-300 max-w-md text-left w-full flex gap-2 ${props.isSizeFileExceeded ?'text-orange-500' : 'text-neutral-300'}`}>
+        <img
+          src={props.infoIcon}
+          alt="info"
+          className={props.isSizeFileExceeded ? 'filter-orange' : ''}
+        />
         <span className="font-inconsolata text-sm opacity-80 tracking-wide">
-          {props.infoText} {props.maxSize}KB).
+         {props.isSizeFileExceeded ? `${ERROR_MESSAGE}` : `${props.infoText} ${props.maxSize}KB).`} 
         </span>
       </div>
     </>
