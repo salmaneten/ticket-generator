@@ -3,6 +3,7 @@ import patternSquigglyLineTop from "../assets/pattern-squiggly-line-top.svg";
 import patternSquigglyLineBottomDesktop from "../assets/pattern-squiggly-line-bottom-desktop.svg";
 import patternSquigglyLineBottomMobile from "../assets/pattern-squiggly-line-bottom-mobile-tablet.svg";
 import patternCircle from "../assets/pattern-circle.svg";
+import { BREAKPOINTS } from '../constants/config';
 
 interface BackgroundWrapperProps {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ const BackgroundWrapper = ({ children }: BackgroundWrapperProps) => {
   
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 430);
+      setIsMobile(window.innerWidth <= BREAKPOINTS.MOBILE);
     };
     
     // Initial check
@@ -41,7 +42,9 @@ const BackgroundWrapper = ({ children }: BackgroundWrapperProps) => {
           className="absolute top-1/2 right-[26%]"
         />
       )}
+       <div className="max-w-4xl mx-auto pt-12 px-4 pb-10 flex flex-col items-center justify-center z-20 relative">
         {children}
+       </div>
         
         {isMobile ? (
           <img

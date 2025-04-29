@@ -3,16 +3,13 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/logo-full.svg";
 import githubLogo from "../assets/icon-github.svg";
 import patternTicket from "../assets/pattern-ticket.svg";
+
 const TicketConfirmation: React.FC = () => {
+  
   const [avatarUrl, setAvatarUrl] = useState("");
   const location = useLocation();
   const { fullName, email, avatar, gitHubUsername } = location.state || {};
-  const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+ 
   useEffect(() => {
     if (avatar) {
       const objectUrl = URL.createObjectURL(avatar);
@@ -22,6 +19,13 @@ const TicketConfirmation: React.FC = () => {
       return () => URL.revokeObjectURL(objectUrl);
     }
   }, [avatar]);
+
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
   return (
     <div className="max-w-4xl flex flex-col items-center justify-center">
       <h1 className="mt-12 text-neutral-0 text-5xl max-[430px]:text-2xl font-bold text-center text-shadow-lg font-inconsolata leading-tight">
